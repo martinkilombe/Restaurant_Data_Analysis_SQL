@@ -19,4 +19,9 @@ SUM(CASE WHEN Alcohol_Service = 'Wine & Beer' THEN 1 ELSE 0 END) as yes_count,
 FROM restaurants.restaurants;
 
 #calulate the percentage of hotels that ARE franchises and those that are NOT
-
+SELECT count(Alcohol_Service) AS total_rows,
+SUM(CASE WHEN Franchise = 'No' THEN 1 ELSE 0 END) AS no_franchise,
+SUM(CASE WHEN Franchise = 'Yes' THEN 1 ELSE 0 END) AS yes_franchise,
+(SUM(CASE WHEN Franchise = 'No' THEN 1 ELSE 0 END)/COUNT(Franchise)) *100 as no_percentage,
+(SUM(CASE WHEN Franchise = 'Yes' THEN 1 ELSE 0 END)/ COUNT(Franchise))*100 as yes_percentage
+FROM restaurants.restaurants;
