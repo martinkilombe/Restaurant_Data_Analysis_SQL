@@ -27,4 +27,8 @@ SUM(CASE WHEN Franchise = 'Yes' THEN 1 ELSE 0 END) AS yes_franchise,
 FROM restaurants.restaurants;
 
 SELECT COUNT(*) FROM restaurants.restaurants;
-
+#Joining the customer_perferences table and the customers table on the Customer_ID primary key
+SELECT Preferred_Cuisine, City,State
+FROM restaurants.consumer_preferences
+FULL JOIN restaurants.consumers
+	ON restaurants.consumer_preferences.Consumer_ID = restaurants.consumers.Consumer_ID;
