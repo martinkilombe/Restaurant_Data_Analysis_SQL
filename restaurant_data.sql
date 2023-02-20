@@ -2,8 +2,9 @@
 SELECT * FROM restaurants.restaurants
 ORDER BY price;
 
-#
-
+#Showing only results that have matching city and state name
+SELECT * FROM restaurants.restaurants
+WHERE city = State; 
 
 #Selecting restaurants that DO NOT serve beer and allow smoking.
 SELECT * FROM restaurants.restaurants
