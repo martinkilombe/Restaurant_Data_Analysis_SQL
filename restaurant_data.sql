@@ -25,3 +25,6 @@ SUM(CASE WHEN Franchise = 'Yes' THEN 1 ELSE 0 END) AS yes_franchise,
 (SUM(CASE WHEN Franchise = 'No' THEN 1 ELSE 0 END)/COUNT(Franchise)) *100 as no_percentage,
 (SUM(CASE WHEN Franchise = 'Yes' THEN 1 ELSE 0 END)/ COUNT(Franchise))*100 as yes_percentage
 FROM restaurants.restaurants;
+
+SELECT COUNT(*) FROM restaurants.restaurants;
+
