@@ -1,6 +1,10 @@
 #Grouping the table according to price of the restaurant
 SELECT * FROM restaurants.restaurants
 ORDER BY price;
+
+#
+
+
 #Selecting restaurants that DO NOT serve beer and allow smoking.
 SELECT * FROM restaurants.restaurants
 WHERE Alcohol_Service LIKE "%None%" AND  Smoking_Allowed LIKE "%NO%";
@@ -26,7 +30,11 @@ SUM(CASE WHEN Franchise = 'Yes' THEN 1 ELSE 0 END) AS yes_franchise,
 (SUM(CASE WHEN Franchise = 'Yes' THEN 1 ELSE 0 END)/ COUNT(Franchise))*100 as yes_percentage
 FROM restaurants.restaurants;
 
-SELECT COUNT(*) FROM restaurants.restaurants;
+
+#Counting the number of cities that share the same state name
+SELECT COUNT(*) FROM restaurants.restaurants
+WHERE city = State;
+
 #Joining the customer_perferences table and the customers table on the Customer_ID primary key
 SELECT Preferred_Cuisine, City,State
 FROM restaurants.consumer_preferences
