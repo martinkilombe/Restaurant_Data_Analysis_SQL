@@ -31,12 +31,11 @@ SUM(CASE WHEN Franchise = 'Yes' THEN 1 ELSE 0 END) AS yes_franchise,
 (SUM(CASE WHEN Franchise = 'Yes' THEN 1 ELSE 0 END)/ COUNT(Franchise))*100 as yes_percentage
 FROM restaurants.restaurants;
 
-
 #Counting the number of cities that share the same state name
 SELECT COUNT(*) FROM restaurants.restaurants
 WHERE city = State;
 
-#Joining the customer_perferences table and the customers table on the Customer_ID primary key
+#Joining the customer_perferences table and the customers table on the Customer_ID primary key.
 SELECT Preferred_Cuisine, City,State
 FROM restaurants.consumer_preferences
 FULL JOIN restaurants.consumers
